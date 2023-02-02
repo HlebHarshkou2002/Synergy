@@ -1,0 +1,22 @@
+html {
+    background-color: rgb(87, 50, 50);
+}
+
+.app-wrapper {
+    margin: 0 auto;
+    display: grid;
+    grid-template-areas: "h h" "n c";
+    width: 1200px;
+    grid-template-rows: 60px 1fr;
+    grid-template-columns: 2fr 10fr;
+    /* grid-gap: 10px; */
+}
+
+.app-wrapper-content {
+    margin: 10px;
+    color: rgb(0, 0, 0);
+    box-shadow: 10px 10px 30px black;
+    border: 6px solid white;
+    background-color: rgb(255, 240, 157);
+    grid-area: c;
+}

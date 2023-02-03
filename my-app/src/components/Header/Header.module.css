@@ -1,10 +1,21 @@
 .header {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: flex;
+    align-items: center;
     grid-area: h;
-    border: 3px solid rgb(255, 178, 63);
-    background-color: rgb(250, 217, 110);
+    /* border: 3px solid rgb(255, 178, 63); */
+    /* background-color: rgb(250, 217, 110); */
+    background-color: rgb(219, 222, 245);
+    box-shadow: 2px 2px 10px rgb(129, 129, 129);
+    
 }
 
 .header img {
+    margin: 5px;
     width: 50px;
     height: 50px;
+}
+
+.header h1 {
+    color: #222222;
 }

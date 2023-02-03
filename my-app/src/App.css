@@ -1,5 +1,5 @@
 html {
-    background-color: rgb(87, 50, 50);
+    background-color: rgb(255, 255, 255);
 }
 
 .app-wrapper {
@@ -15,8 +15,8 @@ html {
 .app-wrapper-content {
     margin: 10px;
     color: rgb(0, 0, 0);
-    box-shadow: 10px 10px 30px black;
-    border: 6px solid white;
+    box-shadow: 2px 2px 10px rgb(129, 129, 129);
+
     background-color: rgb(255, 240, 157);
     grid-area: c;
 }

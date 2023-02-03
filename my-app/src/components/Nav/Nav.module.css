@@ -1,11 +1,12 @@
 .nav {
     grid-area: n;
-    border: 3px solid rgb(255, 178, 63);
+    /* border: 3px solid rgb(255, 178, 63); */
     background-color: rgb(243, 185, 97);
     margin: 10px;
 }
 
 .item {
+    margin-left: 10px;
     color: white;
     text-decoration: none;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -13,6 +14,7 @@
 }
 
 .item .active {
+    margin-left: 10px;
     text-decoration: none;
     color: black;
 }

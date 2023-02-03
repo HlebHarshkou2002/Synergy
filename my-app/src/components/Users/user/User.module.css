@@ -1,0 +1,39 @@
+.item {
+  display: flex;
+  margin-bottom: 20px;
+  margin-left: 10px;
+}
+
+.item img {
+  width: 75px;
+}
+
+.profile button {
+    text-transform: uppercase;
+    width: 100%;
+    font-size: 11px;
+    font-weight: 700;
+    max-width: 75px;
+    height: 25px;
+    color: white;
+    background-color: #222222;
+    border: none;
+    cursor: pointer;
+}
+
+.content {
+  padding-left: 10px;
+}
+
+.fullName {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.status {
+  font-size: 18px;
+}
+
+.location {
+    
+}

@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
-import { sendMessageCreator, updateNewMessageBodyCreator } from "../redux/dialogs-reducer";
-import store from "../redux/redux-store";
+import { sendMessageCreator, updateNewMessageBodyCreator } from "../../redux/dialogs-reducer";
+import store from "../../redux/redux-store";
 import Dialogs from "./Dialogs";
 
 // Ненужный кусок кода, учился писать контейнерные компоненты

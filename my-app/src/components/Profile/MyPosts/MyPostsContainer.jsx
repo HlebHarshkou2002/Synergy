@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import {
   updateNewPostTextActionCreator,
   addPostActionCreator,
-} from "../../redux/profile-reducer";
+} from "../../../redux/profile-reducer";
 import MyPosts from "./MyPosts";
 
 // Ненужный код, учился создавать контейнерные компоненты

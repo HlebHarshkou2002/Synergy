@@ -9,11 +9,10 @@ import {Provider} from "react-redux";
 
 export let rerenderEntireTree = (state) => {
   ReactDOM.render(
-    <React.StrictMode>
+    // <React.StrictMode></React.StrictMode> с этим тегом почему-то компонента вызывается два раза// 
       <Provider store={store}>
         <App state={state} dispatch={store.dispatch.bind(store)} store={store}/>
-      </Provider>
-    </React.StrictMode>,
+      </Provider>,
     document.getElementById("root")
   );
 };

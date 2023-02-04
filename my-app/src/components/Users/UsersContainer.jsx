@@ -16,6 +16,9 @@ const mapDispatchToProps = (dispatch) => {
         },
         unFollow: (userId) => {
             dispatch(unFollowActionCreactor(userId));
+        },
+        setUsers: (users) => {
+            dispatch(setUsersActionCreator(users))
         }
     }
 } 

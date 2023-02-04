@@ -2,7 +2,6 @@ import React from "react";
 import s from "./User.module.css";
 
 const User = (props) => {
-
     let subscribe = () => {
         if(props.followed) {
             props.unFollow(props.id);
@@ -16,7 +15,7 @@ const User = (props) => {
       <div className={s.profile}>
         <img src={props.photoUrl} alt="avatar" />
         <div>
-          <button onClick={subscribe}>{props.followed ? "Unfollow" : "Follow"}</button>
+          <button onClick={subscribe} style={{backgroundColor: props.followed ? 'red' : '#222222'}}>{props.followed ? "Unfollow" : "Follow"}</button>
         </div>
       </div>
 

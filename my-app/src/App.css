@@ -19,4 +19,6 @@ html {
 
     background-color: rgb(255, 240, 157);
     grid-area: c;
+
+    max-width: 1000px;
 }

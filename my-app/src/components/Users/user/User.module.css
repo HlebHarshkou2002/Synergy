@@ -1,7 +1,11 @@
 .item {
   display: flex;
   margin-bottom: 20px;
-  margin-left: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+
+  padding-bottom: 20px;
+  border-bottom: white 3px solid;
 }
 
 .item img {

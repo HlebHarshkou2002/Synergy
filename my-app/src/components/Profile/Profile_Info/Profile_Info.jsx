@@ -1,17 +1,25 @@
 import React from "react";
-import s from './Profile_Info.module.css';
+import s from "./Profile_Info.module.css";
 
 const ProfileInfo = () => {
-    return (
-        <div>
-            <div>
-                <img className='profilePhoto' src="https://i.pinimg.com/236x/e2/93/11/e29311e74d29e2ed2a822d62c737878e.jpg" />
-            </div>
-            <div>
-                descriprion
-            </div>
+  return (
+    <div className={s.profileInfo}>
+      <div className={s.content}>
+
+        <div className={s.profileImages}>
+          <img
+            className={s.profileImageMain}
+            src="https://klike.net/uploads/posts/2022-05/1651820178_1.jpg"
+            alt="Main image"
+          />
         </div>
-    );
-}
+
+        <div className={s.profileDescription}>
+          <h2>Strike while the iron is hot.</h2>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default ProfileInfo;

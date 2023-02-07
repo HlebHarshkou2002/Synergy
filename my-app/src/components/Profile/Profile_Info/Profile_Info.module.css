@@ -1,28 +1,58 @@
 .profileInfo {
-    /* position: relative; */
+    margin-bottom: 100px;
 }
 
 .profileImages {
+    display: flex;
+    position: relative;
+
     background-image: url('https://img.pac.ru/resorts/213084/265649/big/F4022E267F00010148FB84960BB1A70A.jpg');
 
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 
-    max-height: 300px;
-}
-
-.imagePanorama {
-    max-width: 1000px;
-    height: 500px;
-
-    width: 100%;
+    min-height: 300px;
     height: 100%;
 }
 
-.profileImageMain {
-    max-width: 300px;
+.profileImages:after {
+	content: "";
+	display: block;
+	width: 100%;
+	height: 100%;    
+	position: absolute;
+	top: 0;    
+	left: 0;   
+	background: transparent;
+	background-image: linear-gradient(to bottom, #11de93 20%, #0e7ad6 80%);    
+	/* background-image: linear-gradient(to bottom, #ffffff 20%, #000000 80%);     */
+	opacity: 0.5; 
+}
 
-    width: 20px;
+.imagesWrapper {
+    width: 40%;
+}
+
+.profileImageMain {
+    position: absolute;
+    border-radius: 10%;
+
+    top: 10%;
+    left: 10%;
+
+    max-width: 250px;
+    max-height: 400px;
+
     width: 100%;
+
+    z-index: 100;
+}
+
+.profileDescription {
+    padding-top: 140px;
+    font-size: 28px;
+    color: #fdfdfd;
+
+    z-index: 100;
 }

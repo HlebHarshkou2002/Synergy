@@ -1,0 +1,39 @@
+.posts {
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.profileTextArea {
+    display: flex;
+    align-items: center;
+
+    margin-left: 10px;
+    margin-bottom: 50px;
+}
+
+.profileTextArea textarea {
+    font-size: 18px;
+
+    width: 50%;
+    height: 40px;
+
+    border: 1px solid #f2f2f2;
+    border-radius: 5px;
+}
+
+.profileTextArea button {
+    height: 40px;
+    width: 20%;
+
+    background-color: #222222;
+    color: white;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.profileTextArea button:hover {
+    background-color: #111111;
+
+}

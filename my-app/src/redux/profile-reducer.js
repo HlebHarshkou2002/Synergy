@@ -3,10 +3,10 @@ const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 
 let initialState = {
     postsData: [
-      { id: 1, message: "Hello, a good reason!", likesCount: 23 },
-      { id: 2, message: "Hi, my name is!", likesCount: 1 },
+      { id: 1, message: "You are so pretty. Pls, tell me, where are you from?", likesCount: 23 },
+      { id: 2, message: "Omg! Its New-York, I had to return there, because its so precious.", likesCount: 12 },
     ],
-    newPostText: "it-kamasutra.com",
+    newPostText: "Hello, Alex!",
 };
 
 const profileReducer = (state = initialState, action) => {
@@ -15,7 +15,7 @@ const profileReducer = (state = initialState, action) => {
             let newPost = {
                 id: 3,
                 message: state.newPostText,
-                likesCount: 1000,
+                likesCount: 54,
               };
             debugger;
             //Делаем копию стейта чтобы connect мог понять, что стейт изменился и мог перерендерить компоненту

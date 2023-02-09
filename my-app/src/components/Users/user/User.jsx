@@ -22,14 +22,14 @@ const User = (props) => {
       <div className={s.content}>
         <div className={s.fullName}>
           <span>{props.name}</span>
-          <span> {props.surname}</span>
+          {/* <span> {props.surname}</span> */}
         </div>
 
         <div className={s.status}>{props.status}</div>
 
-        <div className={s.location}>
+        {/* <div className={s.location}>
           {props.country}, {props.city}
-        </div>
+        </div> */}
       </div>
     </div>
   );

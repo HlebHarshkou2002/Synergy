@@ -17,7 +17,6 @@ const profileReducer = (state = initialState, action) => {
                 message: state.newPostText,
                 likesCount: 54,
               };
-            debugger;
             //Делаем копию стейта чтобы connect мог понять, что стейт изменился и мог перерендерить компоненту
             return {
                 ...state,

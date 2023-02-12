@@ -1,0 +1,35 @@
+.selectedPage {
+    min-width: 40px;
+    background-color: #000000;
+    color: white;
+
+    font-weight: bold;
+    
+    cursor: pointer;
+    font-size: 18px;
+
+    padding: 10px;
+    margin-right: 5px;
+    text-align: center;
+
+}
+
+.pageItem {
+    min-width: 40px;
+
+    background-color: #222222;
+    color: white;
+
+    cursor: pointer;
+    font-size: 18px;
+
+    padding: 10px;
+    margin-right: 5px;
+    text-align: center;
+}
+.pagesBar {
+    margin-bottom: 30px;
+    margin-left: 20px;
+
+    display: flex;
+}

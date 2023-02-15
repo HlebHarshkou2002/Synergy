@@ -48,8 +48,6 @@ const Users = (props) => {
     <div>
       <h1>USERS</h1>
 
-      {props.isFetching ? <Preloader /> : null}
-
       <div className={styles.pagesBar}>
         {slicedPages.map((p) => {
           return (
@@ -69,7 +67,8 @@ const Users = (props) => {
         })}
       </div>
 
-      {usersElements}
+      {props.isFetching ? <Preloader /> : usersElements}
+      
     </div>
   );
 };

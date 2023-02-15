@@ -1,3 +1,7 @@
 .preloader__wrapper {
-    background-color: white;
+    padding: 0 auto;
+}
+
+.preloader__wrapper img {
+    width: 100px;
 }

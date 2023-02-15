@@ -1,6 +1,8 @@
 import React from "react";
 import User from "./user/User";
 import styles from "./Users.module.css";
+import Preloader from "../common/Preloader/Preloader";
+
 
 const Users = (props) => {
 
@@ -45,6 +47,8 @@ const Users = (props) => {
   return (
     <div>
       <h1>USERS</h1>
+
+      {props.isFetching ? <Preloader /> : null}
 
       <div className={styles.pagesBar}>
         {slicedPages.map((p) => {

@@ -6,12 +6,14 @@ import {
   setUsersActionCreator,
   setCurrentPageActionCreator,
   setTotalUsersCountActionCreator,
+  toggleFetchingActionCreator,
 } from "../../redux/users-reducer";
 import Users from "./Users";
 import axios from "axios";
 
 class UsersAPIContainer extends React.Component {
   componentDidMount() {
+    this.props.toggleIsFetching(true);
     if (this.props.usersData.length === 0) {
       axios
         .get(
@@ -19,6 +21,7 @@ class UsersAPIContainer extends React.Component {
         )
         .then((response) => {
           console.log("Response: ", response);
+          this.props.toggleIsFetching(false);
           this.props.setUsers(response.data.items);
           this.props.setTotalUsersCount(response.data.totalCount);
         });
@@ -26,6 +29,7 @@ class UsersAPIContainer extends React.Component {
   }
 
   onPageChanged = (pageNumber) => {
+    this.props.toggleIsFetching(true);
     this.props.setCurrentPage(pageNumber);
     axios
       .get(
@@ -33,21 +37,26 @@ class UsersAPIContainer extends React.Component {
       )
       .then((response) => {
         console.log("Response: ", response);
+        this.props.toggleIsFetching(false);
         this.props.setUsers(response.data.items);
       });
   };
 
   render() {
     return (
-    <Users 
-    usersData={this.props.usersData} 
-    follow={this.props.follow}
-    unFollow={this.props.unFollow}
-    totalUsersCount={this.props.totalUsersCount}
-    pageSize={this.props.pageSize}
-    currentPage={this.props.currentPage}
-    onPageChanged={this.onPageChanged}
-    />);
+      <Users
+        usersData={this.props.usersData}
+        follow={this.props.follow}
+        unFollow={this.props.unFollow}
+        totalUsersCount={this.props.totalUsersCount}
+        pageSize={this.props.pageSize}
+        currentPage={this.props.currentPage}
+        isFetching={this.props.isFetching}
+
+
+        onPageChanged={this.onPageChanged}
+      />
+    );
   }
 }
 
@@ -57,6 +66,7 @@ const mapStateToProps = (state) => {
     pageSize: state.usersPage.pageSize,
     totalUsersCount: state.usersPage.totalUsersCount,
     currentPage: state.usersPage.currentPage,
+    isFetching: state.usersPage.isFetching,
   };
 };
 
@@ -76,6 +86,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     setTotalUsersCount: (totalCount) => {
       dispatch(setTotalUsersCountActionCreator(totalCount));
+    },
+    toggleIsFetching: (isFetching) => {
+      dispatch(toggleFetchingActionCreator(isFetching));
     },
   };
 };

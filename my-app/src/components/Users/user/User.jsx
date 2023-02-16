@@ -1,21 +1,29 @@
 import React from "react";
 import s from "./User.module.css";
+import { NavLink } from "react-router-dom";
 
 const User = (props) => {
-    let subscribe = () => {
-        if(props.followed) {
-            props.unFollow(props.id);
-        } else {
-            props.follow(props.id);
-        }
+  let subscribe = () => {
+    if (props.followed) {
+      props.unFollow(props.id);
+    } else {
+      props.follow(props.id);
     }
+  };
 
   return (
     <div className={s.item}>
       <div className={s.profile}>
-        <img src={props.photoUrl} alt="avatar" />
+        <NavLink to={'/profile?' + props.id}>
+          <img src={props.photoUrl} alt="avatar" />
+        </NavLink>
         <div>
-          <button onClick={subscribe} style={{backgroundColor: props.followed ? 'red' : '#222222'}}>{props.followed ? "Unfollow" : "Follow"}</button>
+          <button
+            onClick={subscribe}
+            style={{ backgroundColor: props.followed ? "red" : "#222222" }}
+          >
+            {props.followed ? "Unfollow" : "Follow"}
+          </button>
         </div>
       </div>
 

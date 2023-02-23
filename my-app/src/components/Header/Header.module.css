@@ -1,4 +1,5 @@
 .header {
+    position: relative;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     display: flex;
     align-items: center;
@@ -16,6 +17,28 @@
     height: 50px;
 }
 
-.header h1 {
+.header p {
     color: #222222;
+    font-weight: bold;
+    font-size: 26px;
+}
+
+.register__item {
+    position: absolute;
+    padding: 0 20px;
+    right: 0;
+
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    
+}
+
+.register {
+    color: #222222;
+}
+
+.register:hover {
+    cursor: pointer;
+    color: rgb(71, 71, 71);
 }

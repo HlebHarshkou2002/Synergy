@@ -14,7 +14,7 @@ const User = (props) => {
   return (
     <div className={s.item}>
       <div className={s.profile}>
-        <NavLink to={'/profile?' + props.id}>
+        <NavLink to={'/profile/' + props.id}>
           <img src={props.photoUrl} alt="avatar" />
         </NavLink>
         <div>

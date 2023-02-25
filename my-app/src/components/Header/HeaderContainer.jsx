@@ -12,7 +12,6 @@ class HeaderContainer extends React.Component {
         withCredentials: true,
       })
       .then((response) => {
-        console.log("Response: ", response);
         this.props.toggleIsFetching(false);
 
         if (response.data.resultCode === 0) {

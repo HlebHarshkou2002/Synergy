@@ -2,6 +2,7 @@ import React from "react";
 import s from "./User.module.css";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
+import { usersAPI } from "../../../api/api";
 
 const User = (props) => {
   let subscribe = () => {
@@ -22,18 +23,8 @@ const User = (props) => {
           {props.followed ? (
             <button
               onClick={() => {
-                axios
-                  .delete(
-                    `https://social-network.samuraijs.com/api/1.0/follow/${props.id}`,
-                    {
-                      withCredentials: true,
-                      headers: {
-                        "API-KEY": "7e1b8b07-d9aa-4fa2-bffa-8cc81e921356"
-                      }
-                    }) 
-                  .then((response) => {
-                    console.log("Response: ", response);
-                    if (response.data.resultCode === 0) {
+                usersAPI.unfollowUser(props.id).then((data) => {
+                    if (data.resultCode === 0) {
                       subscribe();
                     }
                   });
@@ -45,18 +36,8 @@ const User = (props) => {
           ) : (
             <button
               onClick={() => {
-                axios.post(
-                    `https://social-network.samuraijs.com/api/1.0/follow/${props.id}`, 
-                    {},
-                    {
-                      withCredentials: true,
-                      headers: {
-                        "API-KEY": "7e1b8b07-d9aa-4fa2-bffa-8cc81e921356"
-                      }
-                    }
-                  ).then((response) => {
-                    console.log("Response: ", response);
-                    if (response.data.resultCode === 0) {
+                usersAPI.followUser(props.id).then((data) => {
+                    if (data.resultCode === 0) {
                       subscribe();
                     }
                   });

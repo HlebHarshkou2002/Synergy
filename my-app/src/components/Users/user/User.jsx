@@ -22,12 +22,15 @@ const User = (props) => {
         <div>
           {props.followed ? (
             <button
+              disabled={props.usersInFollowingProgress.some(id => id === props.id)}
               onClick={() => {
+                props.toggleFollowingProgress(true, props.id);
                 usersAPI.unfollowUser(props.id).then((data) => {
-                    if (data.resultCode === 0) {
-                      subscribe();
-                    }
-                  });
+                  if (data.resultCode === 0) {
+                    subscribe();
+                  }
+                  props.toggleFollowingProgress(false, props.id);
+                });
               }}
               style={{ backgroundColor: props.followed ? "red" : "#222222" }}
             >
@@ -35,13 +38,16 @@ const User = (props) => {
             </button>
           ) : (
             <button
+              disabled={props.usersInFollowingProgress.some(id => id === props.id)}
               onClick={() => {
+                props.toggleFollowingProgress(true, props.id);
+
                 usersAPI.followUser(props.id).then((data) => {
-                    if (data.resultCode === 0) {
-                      subscribe();
-                    }
-                  });
-                
+                  if (data.resultCode === 0) {
+                    subscribe();
+                  }
+                  props.toggleFollowingProgress(false, props.id);
+                });
               }}
               style={{ backgroundColor: props.followed ? "red" : "#222222" }}
             >

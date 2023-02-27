@@ -25,6 +25,13 @@
     cursor: pointer;
 }
 
+.profile button:disabled {
+  color: white;
+  background-color: silver;
+  opacity: 0.5;
+
+}
+
 .content {
   padding-left: 10px;
 }

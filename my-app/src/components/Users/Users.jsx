@@ -21,6 +21,11 @@ const Users = (props) => {
       // country={u.location.country}
       // city={u.location.city}
 
+      toggleFollowingProgress={props.toggleFollowingProgress}
+      
+      followingInProgress={props.followingInProgress}
+      usersInFollowingProgress={props.usersInFollowingProgress}
+
       follow={props.follow} // из контейнерной компоненты метод передаётся презентационной в пропсах
       unFollow={props.unFollow}
       active={u.active}

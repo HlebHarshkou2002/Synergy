@@ -26,7 +26,21 @@ export const usersAPI = {
   },
 
   getUserProfile(userId) {
-    return instance.get(`https://social-network.samuraijs.com/api/1.0/profile/${userId}`);
+    return instance.get(`profile/${userId}`);
+  }
+};
+
+export const profileAPI = {
+  getUserProfile(userId) {
+    return instance.get(`profile/${userId}`);
+  },
+  getUserStatus(userId) {
+    return instance.get(`profile/status/${userId}`);
+  },
+  updateUserStatus(status) {
+    return instance.put(`profile/status`, {
+      status: status,
+    });
   }
 };
 

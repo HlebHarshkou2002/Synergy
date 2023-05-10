@@ -63,7 +63,8 @@ const Users = (props) => {
                   : styles.pageItem
               }
               onClick={(e) => {
-                props.onPageChanged(p);
+
+                props.onPageChanged(p, props.pageSize);
               }}
             >
               {p}

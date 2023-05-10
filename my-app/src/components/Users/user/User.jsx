@@ -1,17 +1,9 @@
 import React from "react";
 import s from "./User.module.css";
 import { NavLink } from "react-router-dom";
-import axios from "axios";
 import { usersAPI } from "../../../api/api";
 
 const User = (props) => {
-  let subscribe = () => {
-    if (props.followed) {
-      props.unFollow(props.id);
-    } else {
-      props.follow(props.id);
-    }
-  };
 
   return (
     <div className={s.item}>
@@ -24,14 +16,9 @@ const User = (props) => {
             <button
               disabled={props.usersInFollowingProgress.some(id => id === props.id)}
               onClick={() => {
-                props.toggleFollowingProgress(true, props.id);
-                usersAPI.unfollowUser(props.id).then((data) => {
-                  if (data.resultCode === 0) {
-                    subscribe();
-                  }
-                  props.toggleFollowingProgress(false, props.id);
-                });
-              }}
+                props.unFollow(props.id);
+              }
+            }
               style={{ backgroundColor: props.followed ? "red" : "#222222" }}
             >
               Unfollow
@@ -40,14 +27,7 @@ const User = (props) => {
             <button
               disabled={props.usersInFollowingProgress.some(id => id === props.id)}
               onClick={() => {
-                props.toggleFollowingProgress(true, props.id);
-
-                usersAPI.followUser(props.id).then((data) => {
-                  if (data.resultCode === 0) {
-                    subscribe();
-                  }
-                  props.toggleFollowingProgress(false, props.id);
-                });
+                props.follow(props.id);
               }}
               style={{ backgroundColor: props.followed ? "red" : "#222222" }}
             >

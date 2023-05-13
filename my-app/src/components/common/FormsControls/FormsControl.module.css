@@ -1,0 +1,7 @@
+.form__control.error input{
+    border: 2px solid red;
+}
+
+.form__control.error span {
+    color: red;
+}

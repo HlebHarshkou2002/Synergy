@@ -2,31 +2,79 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import Preloader from "../common/Preloader/Preloader";
 import s from "./Header.module.css";
+import { Navbar, Nav } from "react-bootstrap";
+
+import Navibar from "./Nav/Nav";
+
+import { Button, Space } from 'antd';
+import { LoginOutlined, LogoutOutlined, HomeOutlined} from '@ant-design/icons';
 
 const Header = (props) => {
   return (
     <header className={s.header}>
-      <img src="https://cdn.dribbble.com/users/10882/screenshots/15172621/media/cd2246d5d0f54f9a4316bd4d276764b2.png?compress=1&resize=400x300" />
-      <p>Synergy</p>
-
-      {props.isFetching ? (
-        <div className={s.preloader__wrapper}><Preloader /></div>
-      ) : (
-        <div className={s.register__item}>
-          {props.isAuth ? (
-            <NavLink
-              to={`/profile/` + props.id}
-              style={{ textDecoration: "none" }}
-            >
-              <span className={s.register}>{props.login}</span>
-            </NavLink>
-          ) : (
-            <NavLink to={"/login"} style={{ textDecoration: "none" }}>
-              <span className={s.register}>Login</span>
-            </NavLink>
-          )}
-        </div>
-      )}
+      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Navbar.Brand>Synergy</Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="mr-auto">
+            <Nav.Link>
+              <NavLink to="/Profile">Profile</NavLink>
+            </Nav.Link>
+            <Nav.Link>
+              <NavLink to="/Dialogs" className = { navData => navData.isActive ? s.active : s.item }>Messages</NavLink>
+            </Nav.Link>
+            <Nav.Link>
+              <NavLink to="/News" className = { navData => navData.isActive ? s.active : s.item }>News</NavLink>
+            </Nav.Link>
+            <Nav.Link>
+              <NavLink to="/Music" className = { navData => navData.isActive ? s.active : s.item }>Music</NavLink>
+            </Nav.Link>
+            <Nav.Link>
+              <NavLink to="/Users" className = { navData => navData.isActive ? s.active : s.item }>Users</NavLink>
+            </Nav.Link>
+            <Nav.Link>
+              <NavLink to="/Settings" className = { navData => navData.isActive ? s.active : s.item }>Settings</NavLink>
+            </Nav.Link>
+            {/* <Navibar /> */}
+          </Nav>
+          <Nav className="mr-auto">
+            
+          <Space wrap>       
+            
+              {props.isFetching ? (
+                <Button type="primary" loading>Loading</Button>
+                // <div className={s.preloader__wrapper}>
+                //   <Preloader />
+                // </div>
+              ) : (
+                <div className={s.register__item}>
+                  <Button type="primary" > 
+                  {props.isAuth ? (
+                    <div className={s.btn}>
+                      <NavLink to={`/profile/` + props.id} style={{color: "white"}}  className={s.btn__link}>
+                        <span>{props.login}</span>
+                      </NavLink>
+                     <HomeOutlined />
+                    </div>
+                  ) : (
+                    <div className={s.btn}>
+                      <NavLink to={"/login"}>
+                       <span>Login</span>
+                      </NavLink>
+                      <LoginOutlined />
+                    </div>
+                  )}
+                  </Button>
+                </div>
+              )}
+            <Button type="primary" className={s.btn}>
+              Sign Out
+              <LogoutOutlined />
+            </Button>
+            </Space>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
     </header>
   );
 };

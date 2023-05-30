@@ -1,11 +1,23 @@
 .header {
+    display: flex;
+    justify-content: space-between;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: white;  
+    color: #222;  
+}
+
+.buttons__wrapper {
+    margin: 0 20px;
+}
+
+.btns {
+    display: flex;
+    text-align: center;
+    align-items: center;
 }
 
 .btn {
+    margin-right: 5px;
     display: flex;
-    text-align: center;
     align-items: center;
 }
 
@@ -13,13 +25,10 @@
     color: white;
     text-decoration: none;
     margin-right: 5px;
+    max-width: 108px;
 }
 
-/* Preloader */
-
-.preloader__wrapper {
-    /* position: absolute;
-    right: 0;
-    padding: 0 20px; */
-
+.main__logo img{
+    width: 180px;
+    margin: 0 20px;
 }

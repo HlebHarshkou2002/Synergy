@@ -2,7 +2,10 @@ import React from "react";
 import s from "./MyPosts.module.css";
 import Post from "./post/Post.jsx";
 
-const MyPosts = (props) => {
+const MyPosts = React.memo((props) => {
+  console.log("RENDER")
+
+
   let postsElements = props.postsData.map((p) => (
     <Post message={p.message} likesCount={p.likesCount} />
   ));
@@ -36,6 +39,6 @@ const MyPosts = (props) => {
       {postsElements}
     </div>
   );
-};
+});
 
 export default MyPosts;
